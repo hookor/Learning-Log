@@ -211,6 +211,11 @@ const LinkWithPreload = ({ to, ...props }: { to: string, children?: ReactNode })
 function App() {
 ​
   return (
+<>
+	<header className="App-header">
+          <LinkWithPreload to="/menu1">Menu1</LinkWithPreload>
+          <LinkWithPreload to="/menu2">Menu2</LinkWithPreload>
+        </header>
         <React.Suspense fallback={'loading'}>
             {routes.map((route) =>
               <Route
@@ -221,6 +226,8 @@ function App() {
             )}
           </Switch>
         </React.Suspense>
+</>
+
 }
 ​
 export default App;
